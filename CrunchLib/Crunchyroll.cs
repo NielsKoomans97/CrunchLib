@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.CSharp;
 
 namespace CrunchLib
 {
@@ -50,7 +51,7 @@ namespace CrunchLib
                 ("device_type", "com.crunchyroll.windows.desktop"),
                 ("access_token", "LNDJgOit5yaRIWN"));
 
-            Tokens = new TokenInfo((string)session.data.session_id, DateTime.Now.AddHours(4), string.Empty, DateTime.Now, default(string));
+            Tokens = new TokenInfo(sessionId: (string)session.data.session_id, DateTime.Now.AddHours(4), string.Empty, DateTime.Now, default(string));
         }
 
         #endregion Public Methods
